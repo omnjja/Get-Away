@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
+  font-size: 450%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+  color: #532c10;
+}
+.footer {
+  background-color: antiquewhite;
+  color: #532c10;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 100;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.form {
+  background-color: #6d3a159d;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 30;
+  color: #ffe9c0;
+}
+
+.count {
+  padding: 5px 15px;
+  border-radius: 16px;
+  background-color: #fff3e2;
+  cursor: pointer;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 50;
+  border: none;
+}
+.count option {
+  background-color: #faebd76c;
+  cursor: pointer;
+}
+.input {
+  padding: 5px 15px;
+  border-radius: 16px;
+  background-color: #fff3e2;
+  border: none;
+  color: #532c10;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 10;
+}
+
+.add {
+  padding: 5px 15px;
+  border-radius: 16px;
+  background-color: #fff3e2;
+  border: none;
+  color: #532c10;
+  font-family: "Rowdies", sans-serif;
+  cursor: pointer;
+}
+.list {
+  flex-grow: 1;
+  background-color: #664f30eb;
+  width: 100%;
+  position: relative;
+  height: 300px;
+}
+.items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 100px;
+}
+.item {
+  color: #fff3e2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 20;
+}
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 10px;
+}
+#checkbox{
+  cursor: pointer;
+}
+.remove{
+  cursor: pointer;
+}
+.sort {
+  padding: 5px 15px;
+  border-radius: 16px;
+  background-color: #fff3e2;
+  cursor: pointer;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 50;
+  border: none;
+}
+.clear {
+  padding: 5px 15px;
+  border-radius: 16px;
+  background-color: #fff3e2;
+  border: none;
+  color: #532c10;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 100;
+  cursor: pointer;
+}
+.itemName{
+  text-decoration: line-through;
+}
