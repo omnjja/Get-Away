@@ -26,14 +26,15 @@ function Header() {
   return <div className="header">FAR AWAY🌎🚀</div>;
 }
 function Form({ items, setItems }) {
-  const [item, setItem] = useState({
+
+  let item = {
     id: Date.now(),
     description: "",
     quantity: 1,
     packed: false,
-  });
-
-  function addItem(e) {
+  };
+  function addItem() {
+    console.log(item.id);
     setItems([...items, item]);
   }
   return (
@@ -42,8 +43,7 @@ function Form({ items, setItems }) {
       <select
         name=""
         className="count"
-        value={item.quantity}
-        onChange={(e) => setItem({ ...item, quantity: e.target.value })}
+        onChange={(e) => { item.quantity =  e.target.value }}
       >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
@@ -56,8 +56,7 @@ function Form({ items, setItems }) {
         type="text"
         className="input"
         placeholder="item..."
-        value={item.description}
-        onChange={(e) => setItem({ ...item, description: e.target.value })}
+        onChange={(e) => { item.description =  e.target.value }}
       />
       <button className="add" onClick={addItem}>
         Add
@@ -66,18 +65,18 @@ function Form({ items, setItems }) {
   );
 }
 function PackingList({ items, setItems }) {
-  // let sortedItems = [...items];
-  // const [sortType, setSortType] = useState("input");
-  // function handleSort(e) {
-  //   let value = e.target.value;
-  //   setSortType(value);
+  let sortedItems = [...items];
+  const [sortType, setSortType] = useState("input");
+  function handleSort(e) {
+    let value = e.target.value;
+    setSortType(value);
 
-  //   sortType === "description"
-  //     ? sortedItems.sort((a, b) => a.description.localeCompare(b.description))
-  //     : sortedItems.sort((a, b) => Number(a.packed) - Number(b.packed));
+    sortType === "description"
+      ? sortedItems.sort((a, b) => a.description.localeCompare(b.description))
+      : sortedItems.sort((a, b) => Number(a.packed) - Number(b.packed));
 
-  //     setItems(sortedItems);
-  // }
+      setItems(sortedItems);
+  }
 
   return (
     <div className="list">
@@ -87,7 +86,7 @@ function PackingList({ items, setItems }) {
         ))}
       </div>
       <div className="btns">
-        <select name="" className="sort">
+        <select name="" className="sort" onChange={(e)=> handleSort(e)}>
           <option value="input">sort by input order</option>
           <option value="description">sort by description</option>
           <option value="toggle">sort by toggle</option>
